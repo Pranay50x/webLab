@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(39, 38, 38);
+            color: aliceblue;
+        }
+        h1{
+            justify-content: center;
+            display: flex;
+        }
+        nav{
+            justify-content: center;
+            display: flex;
+            background-color: black;
+            font-size: x-large;
+        }
+        .links{
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bolder;
+            font-size: large;
+        }
+        h2,p,table{
+            display:flex; 
+            justify-content: center;
+            padding: 20px;
+        }
+        th,td{
+            border: solid 2px white;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        form{
+            justify-content: center;
+            display: flex;
+        }
+        label{
+            margin-right: 10px;
+        }
+        input{
+            margin-right: 30px;
+        }
+        button{
+            margin-left: 30px;
+        }
+        footer{
+            background-color: black;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Educational Trip to Agra</h1>
+    </header>
+    <nav>
+        <a class="links" href="#about">About</a><a class="links"  href="#gallery">Gallery</a>
+        <a class="links"  href="#details">Details</a><a class="links"  href="#feedback">Feedback</a>
+    </nav>
+    <main>
+        <article id="about">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, non. Ullam quaerat quas, libero doloremque ducimus natus enim eveniet omnis atque odit animi tempora molestias explicabo non perferendis minus quam.</p>
+        </article>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <img src="" alt="img here">
+            <figcaption>Taj mahal</figcaption>
+            <video src="" controls></video><br>
+            <audio src="" controls></audio>
+        </section>
+
+        <section id="details">
+            <h2>Travel Details</h2>
+            <table>
+                <tr>
+                    <th>Details</th>
+                    <th>Infromation</th>
+                </tr>
+                <tr>
+                    <td>why is good</td>
+                    <td>cuz its good</td>
+                </tr>
+            </table>
+        </section>
+
+        <aside>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus in quod omnis sequi doloremque dicta, accusantium, maiores vitae necessitatibus placeat fugiat, vel laboriosam. Expedita, earum nulla porro exercitationem maxime aspernatur.</p>
+        </aside>
+
+        <section id="feedback">
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" name="" id="">
+                <br>
+                <label for="Suggestion">Suggestions</label>
+                <textarea name="" id=""></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h3>Socials</h3>
+        <a class="links" href="#">Instagram</a>
+        <a class="links" href="#">FaceBook</a>
+    </footer>
+
+</body>
+</html>
