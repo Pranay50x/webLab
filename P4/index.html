@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border: 2px solid black;
+            border-collapse: collapse; 
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendar generator</h1>
+    <form action="">
+    <p>Select Month</p>
+    <select name="" id="sm">
+        <option value="">Jan</option>
+        <option value="">Feb</option>
+        <option value="">March</option>
+        <option value="">April</option>
+        <option value="">May</option>
+        <option value="">June</option>
+        <option value="">July</option>
+        <option value="">August</option>
+        <option value="">Sept</option>
+        <option value="">Oct</option>
+        <option value="">Nov</option>
+        <option value="">Dec</option>
+    </select>
+    <br>
+    <p>Select year</p>
+    <select name="" id="sy"></select>
+    </form>
+    <br>
+    <button onclick="gen()" type="button">Submit</button>
+    <div id="space"></div>
+    <script>
+        const sy = document.getElementById("sy")
+        const sm = document.getElementById("sm")
+        const space = document.getElementById("space"); 
+        //gettting the years from the for loop 
+        for(let y = 1950;y<=2050;y++){
+            const newEl = document.createElement("option")
+            newEl.innerText = y; 
+            sy.appendChild(newEl)
+        }
+
+
+        function gen(){
+            let year = parseInt(sy.value)
+            let month = parseInt(sm.selectedIndex)
+            let dim = new Date(year, month+1,0 ).getDate()
+            let fd = new Date(year, month, 1).getDay();
+
+            let table = `<table><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>`
+            let day = 1;
+            for(let i =0;i<6;i++){
+                table+=`<tr></tr>`
+                for(let j = 0;j<7;j++){
+                    if(i===0 && j<fd || day>dim){
+                        table+=`<td></td>`    
+                    }
+                    else{
+                        table+=`<td>${day}</td>`
+                        day++;
+                    }
+                }
+                table+= `<tr></tr>`
+                if(day>dim) break;
+            }
+            table += `</table>`
+            space.innerHTML=table
+        }
+
+
+    </script>
+</body>
+</html>
