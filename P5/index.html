@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const countdown=0; 
+        let timerId;
+        function exam(event,form){
+            event.preventDefault()
+            const res = document.getElementById("result")
+            res.innerText=""
+            if(!form.one.value || !form.two.value){
+                res.innerText = "Answer all qs"
+                return;
+            }
+            let i =0; 
+            if(form.one[2].checked){
+                i++;
+            }
+   
+            res.innerText = `Your score is ${i}`
+        }
+
+        window.onload = function(){
+                        
+        }
+    </script>
+</head>
+<body>
+    <form action="" onsubmit="exam(event,this)">
+        <h1 style="text-align: center;">Exam Test</h1>
+        <p>
+        <h2>q1</h2>
+        <input type="radio" name="one" id=""><label>1</label>
+        <input type="radio" name="one" id=""><label>2</label>
+        <input type="radio" name="one" id=""><label>3</label>
+        <input type="radio" name="one" id=""><label>4</label>
+ 
+        </p>
+        <p>
+            <h2>q2</h2>
+            <input type="radio" name="two" id=""><label>1</label>
+            <input type="radio" name="two" id=""><label>2</label>
+            <input type="radio" name="two" id=""><label>3</label>
+            <input type="radio" name="two" id=""><label>4</label>
+        </p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+        <div id="result"></div>
+    </form>
+</body>
+</html>

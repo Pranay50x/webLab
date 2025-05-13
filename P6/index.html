@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="sqcub()">
+    <script>
+        function sqcub(){
+            range = prompt("Enter the range: ")
+            res = range.split(" ")
+
+            if(res.length!=2){
+                alert("invalid range")
+                return;
+            }
+            let first = parseInt(res[0])
+            let second = parseInt(res[1])
+            if(first>second){
+                alert("invalid range")
+                return; 
+            }
+            let table = `<table><tr><th>Numbers</th><th>Squares</th><th>Cubes</th></tr>`
+            
+                for(let i = first;i<=second;i++){
+                    table += `<tr><td>${i}</td><td>${i*i}</td><td>${i*i*i}</td></tr>`
+                }
+                const ans = document.getElementById("answer")
+                table+=`</table>`
+                ans.innerHTML = table
+
+        }
+    </script>
+    <div id="answer"></div>
+</body>
+</html>

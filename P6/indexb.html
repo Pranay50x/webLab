@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text">Text growing</div>
+    <script>
+        let s=5, flag=1;
+        function growandShrink(){
+            let t = document.getElementById("text")
+            t.style.fontSize = s+'pt'
+            flag?t.style.color="red":t.style.color="blue"
+            flag?s+=1:s-=1
+
+            if(s>50){
+                flag=0; 
+                t.innerText = "Text shrinkling"
+            }
+            if(s>4){
+                setTimeout(growandShrink,100)
+            }
+        }
+        growandShrink();
+    </script>
+</body>
+</html>
