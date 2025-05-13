@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const countdown=0; 
+        const COUNTDOWN_SECONDS = 10;
         let timerId;
+        const countdown=0; 
         function exam(event,form){
             event.preventDefault()
             const res = document.getElementById("result")
@@ -23,14 +24,34 @@
             res.innerText = `Your score is ${i}`
         }
 
-        window.onload = function(){
-                        
-        }
+               window.onload = function() {
+            const timerDisplay = document.getElementById('timerValue');
+            const examForm = document.querySelector('form'); // Get the form
+
+            if (!timerDisplay || !examForm) {
+                // console.error("Timer display or form not found!"); // Optional: for debugging
+                return;
+            }
+
+            let timeLeft = COUNTDOWN_SECONDS;
+            timerDisplay.textContent = timeLeft;
+
+            timerId = setInterval(function() {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    examForm.submit(); // This will trigger the 'onsubmit' and call exam()
+                }
+            }, 1000);
+        };
     </script>
 </head>
 <body>
     <form action="" onsubmit="exam(event,this)">
         <h1 style="text-align: center;">Exam Test</h1>
+                <div style="text-align: center; margin-bottom: 10px;">Time Left: <span id="timerValue">10</span>s</div>
+
         <p>
         <h2>q1</h2>
         <input type="radio" name="one" id=""><label>1</label>
