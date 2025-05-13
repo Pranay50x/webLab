@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        button,input{
+            font-size: large;
+        }
+        #b{
+            display: grid;
+            grid-template-columns: repeat(4,50px);
+            gap: 5px
+        }
+        #dis{
+            margin-bottom: 10px;
+            grid-column: span 4;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" readonly id="dis">
+    <div id="b">
+        <button onclick="clear1()">C</button>
+        <button onclick="del()">Del</button>
+        <button onclick="di('/')">/</button>
+        <button onclick="di('*')">*</button>
+        <button onclick="di('-')">-</button>
+        <button onclick="di('1')">1</button>
+        <button onclick="di('2')">2</button>
+        <button onclick="di('3')">3</button>
+        <button onclick="di('+')">+</button>
+        <button onclick="di('4')">4</button>
+        <button onclick="di('5')">5</button>
+        <button onclick="di('6')">6</button>
+        <button onclick="evaluatea()">=</button>
+        <button onclick="di('7')">7</button>
+        <button onclick="di('8')">8</button>
+        <button onclick="di('9')">9</button>
+        <button onclick="di('0')">0</button>
+    </div>
+    <script>
+        const disp = document.getElementById("dis")
+        function di(value){
+            disp.value+=value
+        }
+
+
+        function clear1(){
+            disp.value=""
+        }
+
+        function del(){
+            disp.value = disp.value.slice(0,-1)
+        }
+
+        function evaluatea(){
+           let exp =  disp.value
+           let ans = eval(exp)
+           disp.value=ans
+        }
+
+
+    </script>
+</body>
+</html>
