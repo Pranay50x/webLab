@@ -6,24 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="text">Text growing</div>
+    <p id="tt">Text growing</p>
     <script>
         let s=5, flag=1;
         function growandShrink(){
-            let t = document.getElementById("text")
+            let t = document.getElementById("tt")
             t.style.fontSize = s+'pt'
             flag?t.style.color="red":t.style.color="blue"
             flag?s+=1:s-=1
 
             if(s>50){
                 flag=0; 
-                t.innerText = "Text shrinkling"
+                t.innerHTML = "Text shrinkling"
             }
             if(s>4){
                 setTimeout(growandShrink,100)
             }
+            if(s===4){
+            flag = 1;
+            setTimeout(growandShrink, 100);
         }
-        growandShrink()
+    }
+        growandShrink();
+        
     </script>
 </body>
 </html>
