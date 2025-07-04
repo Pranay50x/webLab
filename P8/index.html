@@ -5,72 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        body {
-            font-family: sans-serif; /* Basic font for readability */
-            display: flex;
-            justify-content: center; /* Center the main container */
-            align-items: flex-start; /* Align to top */
-            min-height: 90vh; /* Ensure it takes up most of the viewport height */
-            margin: 0; /* Remove default body margin */
-            padding-top: 20px; /* Add some space at the top */
-        }
-        .main {
-            border: 1px solid #ccc; 
-            padding: 20px; /* Padding inside the container */
-            width: 500px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-        }
-        h1{
-            text-align: center;
-            margin-top: 0; /* Remove default top margin from h1 */
-            margin-bottom: 20px;
-        }
-        label, input, select, button {
-            display: block; /* Make form elements block-level for stacking */
-            width: 100%;    /* Make them take full width of container */
-            margin-bottom: 10px; /* Space below each element */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        input[type="number"], select {
-            padding: 8px; /* Padding inside input and select */
-            font-size: 1em;
-            text-align: center;
-        }
-        button {
-            padding: 10px; /* Padding for the button */
-            font-size: 1em;
-            cursor: pointer; /* Indicate it's clickable */
-        }
-        #res {
-            margin-top: 15px; /* Space above the result */
-            font-weight: bold; /* Make result text bold */
-            text-align: center;
-        }
+    body {
+        font-family: Arial;
+        text-align: center;
+        padding: 20px;
+    }
+    .main {
+        border: 1px solid black;
+        padding: 20px;
+        width: 400px;
+        margin: 0 auto;
+    }
+    input, select, button {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        font-size: 16px;
+    }
+    button {
+        background-color: rgb(255, 255, 255);
+        cursor: pointer;
+    }
+    #res {
+        margin-top: 20px;
+        font-weight: bold;
+    }
     </style>
 </head>
 <body>
     <div class="main">
-    <h1>Currency Converter</h1>
-    <label for="amt">Enter your amt</label>
-    <input type="number" name="" id="amt"><br>
-    <label for="from">From Currency</label>
-    <select name="f" id="from">
-        <option value="usd">USD</option>
-        <option value="inr">INR</option>
-        <option value="jpy">JPY</option>
-    </select>
-    <br>
-    <label for="to">To Currency</label>
-    <select name="t" id="to">
-        <option value="usd">USD</option>
-        <option value="inr">INR</option>
-        <option value="jpy">JPY</option>
-    </select>
-    <br>
-    <button type="button" onclick="convertC()">Convert</button>
-    <button type="button" onclick="swapC()">Swap</button>
-    <div id="res"></div>
+        <h1>Currency Converter</h1>
+        <label for="amt">Enter your amt</label>
+        <input type="number" name="" id="amt"><br>
+        <label for="from">From Currency</label>
+        <select name="f" id="from">
+            <option value="usd">USD</option>
+            <option value="inr">INR</option>
+            <option value="jpy">JPY</option>
+        </select>
+        <br>
+        <label for="to">To Currency</label>
+        <select name="t" id="to">
+            <option value="usd">USD</option>
+            <option value="inr">INR</option>
+            <option value="jpy">JPY</option>
+        </select>
+        <br>
+        <button type="button" onclick="convertC()">Convert</button>
+        <!-- <button type="button" onclick="swapC()">Swap</button> -->
+        <div id="res"></div>
     </div>  
     <script>
         const rates = {

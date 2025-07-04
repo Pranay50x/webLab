@@ -16,18 +16,22 @@
         nav{
             justify-content: center;
             display: flex;
-            background-color: black;
             font-size: x-large;
         }
         .links{
             text-decoration: none;
             margin-right: 20px;
             font-weight: bolder;
-            font-size: large;
+            font-size: x-large;
         }
-        h2,p,table,video,audio{
+        h2,p,table{
             display:flex; 
             justify-content: center;
+            padding: 20px;
+        }
+        div{
+            justify-content: center;
+            display: flex;
             padding: 20px;
         }
         th,td{
@@ -52,7 +56,6 @@
             background-color: black;
             text-decoration: none;
         }
-        
     </style>
 </head>
 <body>
@@ -71,12 +74,20 @@
 
         <section id="gallery">
             <h2>Gallery</h2>
-            <img src="" alt="img here">
+            <div id="img">
+            <img src="" alt="img here"> 
+            </div>
+            <div>
             <figcaption>Taj mahal</figcaption>
-            <video src="" controls>
+            </div>
+            <div id="vid">
+            <video src="vid.mp4" controls>
                 <source>
             </video><br>
+            </div> 
+            <div> 
             <audio src="" controls></audio>
+            </div>
         </section>
 
         <section id="details">

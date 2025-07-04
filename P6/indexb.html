@@ -7,7 +7,8 @@
 </head>
 <body>
     <p id="tt">Text growing</p>
-    <script>
+</body>
+<script>
         let s=5, flag=1;
         function growandShrink(){
             let t = document.getElementById("tt")
@@ -17,18 +18,18 @@
 
             if(s>50){
                 flag=0; 
-                t.innerHTML = "Text shrinkling"
+                t.innerText = "Text shrinking"
             }
             if(s>4){
                 setTimeout(growandShrink,100)
             }
             if(s===4){
-            flag = 1;
-            setTimeout(growandShrink, 100);
+                flag = 1;
+                t.innerText="Text growing"
+                setTimeout(growandShrink, 100);
         }
     }
         growandShrink();
         
     </script>
-</body>
 </html>

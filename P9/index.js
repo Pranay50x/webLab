@@ -1,9 +1,8 @@
 const http = require("http");
 const port = 3000;
-const host = "127.0.0.1";
+const host = "localhost";
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
   const path = req.url;
   if (path === "/") res.end("Hello world");
   else if (path === "/contact-us") {
